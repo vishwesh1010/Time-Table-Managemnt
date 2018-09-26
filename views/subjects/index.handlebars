@@ -1,0 +1,16 @@
+{{#each subjects}}
+  <div class="card card-body mb-2">
+    <h4>{{sname}}</h4>
+    <p>{{scode}}</p>
+    <p>{{semester}}</p>
+    <a class="btn btn-dark btn-block" href="/subjects/edit/{{id}}">Edit</a>
+    <form method="post" action="/subjects/{{id}}?_method=DELETE">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="Delete">
+    </form>
+
+  </div>
+
+{{else}}
+  <p>No subjects listed</p>
+{{/each}}

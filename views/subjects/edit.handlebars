@@ -1,0 +1,24 @@
+{{#each errors}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+<div class="card card-body">
+  <h3>Edit Time-Table </h3>
+  <form action="/subjects/{{subjects.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="sname">Subject</label>
+      <input type="text" class="form-control" name="sname" value="{{subjects.sname}}" required>
+    </div>
+    <div class="form-group">
+      <label for="scode">Scode</label>
+      <input type="text" class="form-control" name="scode" value="{{subjects.scode}}" required>
+    </div>
+    <div class="form-group">
+      <label for="semester">Semester</label>
+      <input type="text" class="form-control" name="branch" value="{{subjects.branch}}" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

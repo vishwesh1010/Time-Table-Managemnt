@@ -1,0 +1,17 @@
+{{#each classes}}
+  <div class="card card-body mb-2">
+    <h4>{{class}}</h4>
+    <p>{{year}}</p>
+    <p>{{branch}}</p>
+    <p>{{batch}}</p>
+    <a class="btn btn-dark btn-block" href="/classes/edit/{{id}}">Edit</a>
+    <form method="post" action="/classes/{{id}}?_method=DELETE">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" class="btn btn-danger btn-block" value="Delete">
+    </form>
+
+  </div>
+
+{{else}}
+  <p>No video classes listed</p>
+{{/each}}
